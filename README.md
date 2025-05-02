@@ -1,5 +1,5 @@
 <h2>Ferramas <img src="https://media.giphy.com/media/mGcNjsfWAjY5AEZNw6/giphy.gif" width="50"></h2> 
-<a href="https://leetcode.com/anmolpant/">
+
   <img align="left" alt="anmolpant's Leetcode" width="30px" src="https://github.com/anmolpant/anmolpant/blob/master/assets/programming-code-signs.png" />
 </a>
 <a href="https://github.com/anmolpant/anmolpant/blob/master/assets/Anmol's%20Resume.pdf">
