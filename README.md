@@ -1,12 +1,5 @@
 <h2>Ferramas <img src="https://media.giphy.com/media/mGcNjsfWAjY5AEZNw6/giphy.gif" width="50"></h2> 
 
-  <img align="left" alt="anmolpant's Leetcode" width="30px" src="https://github.com/anmolpant/anmolpant/blob/master/assets/programming-code-signs.png" />
-</a>
-<a href="https://github.com/anmolpant/anmolpant/blob/master/assets/Anmol's%20Resume.pdf">
-  <img align="left" alt="Download Resume" width="30px" src="https://github.com/anmolpant/anmolpant/blob/master/assets/curriculum-vitae-resume-svgrepo-com.svg" />
-</a>
- <br /> <br />
-
 <p><em>Incoming Software Engineer at <a href="https://www.linkedin.com/company/societe_generale_global_solution_centre/?originalSubdomain=in">Société Générale</a><img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"></br>Computer Science and Engineering Student at <a href="https://vit.ac.in/">Vellore Institute of Technology</a><img src="https://media.giphy.com/media/fYSnHlufseco8Fh93Z/giphy.gif" width="30">
 </em></p>
 
