@@ -1,24 +1,4 @@
-<h2>Ferramas <img src="https://media.giphy.com/media/mGcNjsfWAjY5AEZNw6/giphy.gif" width="50"></h2> <img align='right' src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" width="230"> 
-<br/>
-<div align = 'left'>
-<a href="https://twitter.com/nastikbrahmin">
-  <img align="left" alt="anmolpant | Twitter" width="30px" src="https://github.com/anmolpant/anmolpant/blob/master/assets/twitter.png" />
-</a>
-<a href="https://www.linkedin.com/in/pantanmol/">
-  <img align="left" alt="anmolpant's Linkdin" width="30px" src="https://github.com/anmolpant/anmolpant/blob/master/assets/linkedin.png" />
-</a>
-<a href="https://github.com/hekakashi/integraci-n/edit/main/README.md">
-  <img align="left" alt="anmolpant's Portfolio" width="30px" src="https://github.com/anmolpant/anmolpant/blob/master/assets/planet.svg" />
-</a>
-<a href="https://www.facebook.com/anmol.pant.3">
-  <img align="left" alt="anmolpant's Facebook" width="30px" src="https://github.com/anmolpant/anmolpant/blob/master/assets/facebook.png" />
-</a>
-<a href="(https://www.instagram.com/anmolpant/">
-  <img align="left" alt="anmolpant's Instagram" width="30px" src="https://github.com/anmolpant/anmolpant/blob/master/assets/instagram.png" />
-</a>
-<a href="https://open.spotify.com/user/anmolpant?si=ShWKrVCDTyWM2UBkMNH9Vw">
-  <img align="left" alt="anmolpant's Spotify" width="30px" src="https://github.com/anmolpant/anmolpant/blob/master/assets/spotify.png" />
-</a>
+<h2>Ferramas <img src="https://media.giphy.com/media/mGcNjsfWAjY5AEZNw6/giphy.gif" width="50"></h2> 
 <a href="https://leetcode.com/anmolpant/">
   <img align="left" alt="anmolpant's Leetcode" width="30px" src="https://github.com/anmolpant/anmolpant/blob/master/assets/programming-code-signs.png" />
 </a>
