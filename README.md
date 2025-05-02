@@ -7,7 +7,7 @@
 <a href="https://www.linkedin.com/in/pantanmol/">
   <img align="left" alt="anmolpant's Linkdin" width="30px" src="https://github.com/anmolpant/anmolpant/blob/master/assets/linkedin.png" />
 </a>
-<a href="https://anmolpant.github.io/">
+<a href="https://github.com/hekakashi/integraci-n/edit/main/README.md">
   <img align="left" alt="anmolpant's Portfolio" width="30px" src="https://github.com/anmolpant/anmolpant/blob/master/assets/planet.svg" />
 </a>
 <a href="https://www.facebook.com/anmol.pant.3">
