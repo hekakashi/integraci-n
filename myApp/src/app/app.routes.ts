@@ -21,5 +21,13 @@ export const routes: Routes = [
     path: 'iniciar',
     loadComponent: () => import('./iniciar/iniciar.page').then( m => m.IniciarPage)
   },
+  {
+    path: 'herra-manuales',
+    loadComponent: () => import('./herra-manuales/herra-manuales.page').then( m => m.HerraManualesPage)
+  },
+  {
+    path: 'equipo',
+    loadComponent: () => import('./equipo/equipo.page').then( m => m.EquipoPage)
+  },
 
 ];
