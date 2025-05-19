@@ -9,5 +9,17 @@ export const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
+  },  {
+    path: 'materiales',
+    loadComponent: () => import('./materiales/materiales.page').then( m => m.MaterialesPage)
   },
+  {
+    path: 'registro',
+    loadComponent: () => import('./registro/registro.page').then( m => m.RegistroPage)
+  },
+  {
+    path: 'iniciar',
+    loadComponent: () => import('./iniciar/iniciar.page').then( m => m.IniciarPage)
+  },
+
 ];

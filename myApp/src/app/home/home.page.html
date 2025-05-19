@@ -1,33 +1,42 @@
 <ion-content>
   <div class="container">
-    <div class="welcome">
-      <h1>Bienvenidos a Ferramas</h1>
-      <img src="assets/logo.png" alt="Ferramas Logo" />
-    </div>
 
-    <div class="intro">
-      <p>
-        Somos una pequeña centro de distribución con nuestro nueva plataforma web
-      </p>
-    </div>
+    <div class="main-content">
+      <div class="left">
+        <h1>Bienvenidos a <br> Ferramas</h1>
+        <img src="assets/img/logo.png" alt="Logo de Ferramas" class="logo">
+      </div>
 
-    <div class="buttons">
-      <ion-button expand="block" color="dark">Herra - Manuales</ion-button>
-      <ion-button expand="block" color="dark">Materiales Básicos</ion-button>
-      <ion-button expand="block" color="dark">Equipos Seguridad</ion-button>
-      <ion-button expand="block" color="dark">Tornillos - Anclaje</ion-button>
-      <ion-button expand="block" color="dark">Fijaciones</ion-button>
-      <ion-button expand="block" color="dark">Equipos Medición</ion-button>
-    </div>
+      <!-- Columna derecha -->
+      <div class="right">
+        <p class="intro">
+          Somos una pequeña centro de distribución con nuestro nueva plataforma web
+        </p>
 
-    <div class="social">
-      <p>SÍGUENOS EN LAS REDES SOCIALES</p>
-      <div class="icons">
-        <ion-icon name="logo-instagram"></ion-icon>
-        <ion-icon name="logo-facebook"></ion-icon>
-        <ion-icon name="logo-twitter"></ion-icon>
-        <ion-icon name="mail-outline"></ion-icon>
+        <div class="buttons">
+          <ion-button color="dark" [routerLink]="['/herra-manuales']">Herra - Manuales</ion-button>
+          <ion-button color="dark" [routerLink]="['/materiales']">Materiales Básicos</ion-button>
+          <ion-button color="dark" [routerLink]="['/equipo']">Equipos Seguridad</ion-button>
+          <ion-button color="dark" [routerLink]="['/equipo']">Tornillos - Anclaje</ion-button>
+          <ion-button color="dark">Fijaciones</ion-button>
+          <ion-button color="dark">Equipos Medición</ion-button>
+        </div>
+
+        <!-- Línea separadora -->
+        <hr class="divider"/>
+
+        <!-- Redes sociales -->
+        <div class="social">
+          <p>SÍGUENOS EN LAS REDES SOCIALES</p>
+          <div class="icons">
+            <img src="assets/img/instagram.png" alt="Instagram" width="30">
+            <img src="assets/img/facebook.png" alt="Facebook" width="30">
+            <img src="assets/img/twitter.png" alt="Twitter" width="30">
+            <img src="assets/img/gmail.png" alt="Email" width="30">
+          </div>
+        </div>
       </div>
     </div>
+
   </div>
 </ion-content>

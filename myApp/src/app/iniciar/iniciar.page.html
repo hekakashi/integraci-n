@@ -1,0 +1,26 @@
+<ion-content class="login-content">
+  <div class="login-container">
+    <h1>Iniciar sesión</h1>
+
+    <ion-item lines="none">
+      <ion-label position="stacked">USUARIO</ion-label>
+      <ion-input type="text" placeholder="Ingrese su usuario"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="stacked">CONTRASEÑA</ion-label>
+      <ion-input type="password" placeholder="Ingrese su contraseña"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" color="dark">
+      INGRESAR
+    </ion-button>
+
+    <div class="no-cuenta">
+      <hr />
+      <p>
+        <a [routerLink]="['/registro']">NO TENGO CUENTA?</a>
+      </p>
+    </div>
+  </div>
+</ion-content>
