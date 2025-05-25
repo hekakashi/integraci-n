@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goToHome()">
+        <ion-icon slot="icon-only" name="home"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>{{ categoria | titlecase }}</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="openCart()">
+        <ion-icon slot="icon-only" name="cart"></ion-icon>
+      </ion-button>
+      <ion-button (click)="goToLogin()">
+        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="buscar()"></ion-searchbar>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="categoria" (ionChange)="cambiarCategoria($event.detail.value)">
+      <ion-segment-button value="herra-manuales">Herra. Manuales</ion-segment-button>
+      <ion-segment-button value="materiales-basicos">Materiales Básicos</ion-segment-button>
+      <ion-segment-button value="equipo-seguridad">Equipo Seguridad</ion-segment-button>
+      <ion-segment-button value="tornillo-anclaje">Tornillo/Anclaje</ion-segment-button>
+      <ion-segment-button value="fijaciones">Fijaciones</ion-segment-button>
+      <ion-segment-button value="equipo-mediciones">Equipo Mediciones</ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let producto of productosFiltrados">
+      {{ producto.nombre }}
+    </ion-item>
+  </ion-list>
+</ion-content>

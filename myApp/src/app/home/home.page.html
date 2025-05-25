@@ -14,11 +14,12 @@
         </p>
 
         <div class="buttons">
-          <ion-button color="dark" [routerLink]="['/herra-manuales']">Herra - Manuales</ion-button>
-          <ion-button color="dark" [routerLink]="['/materiales']">Materiales Básicos</ion-button>
-          <ion-button color="dark" [routerLink]="['/equipo']">Equipos Seguridad</ion-button>
-          <ion-button color="dark" [routerLink]="['/equipo']">Tornillos - Anclaje</ion-button>
-          <ion-button color="dark">Fijaciones</ion-button>
+          <ion-button [routerLink]="['/categorias', 'herra-manuales']">Herra - Manuales</ion-button>
+          <ion-button [routerLink]="['/categorias', 'materiales-basicos']">Materiales Básicos</ion-button>
+          <ion-button [routerLink]="['/categorias', 'equipo-seguridad']">Equipo Seguridad</ion-button>
+          <ion-button [routerLink]="['/categorias', 'tornillos-anclaje']">Tornillos - Anclaje</ion-button>
+          <ion-button [routerLink]="['/categorias', 'fijaciones']">Fijaciones</ion-button>
+
           <ion-button color="dark">Equipos Medición</ion-button>
         </div>
 

@@ -9,9 +9,6 @@ export const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
-  },  {
-    path: 'materiales',
-    loadComponent: () => import('./materiales/materiales.page').then( m => m.MaterialesPage)
   },
   {
     path: 'registro',
@@ -22,12 +19,12 @@ export const routes: Routes = [
     loadComponent: () => import('./iniciar/iniciar.page').then( m => m.IniciarPage)
   },
   {
-    path: 'herra-manuales',
-    loadComponent: () => import('./herra-manuales/herra-manuales.page').then( m => m.HerraManualesPage)
+    path: 'suscribete',
+    loadComponent: () => import('./suscribete/suscribete.page').then( m => m.SuscribetePage)
   },
   {
-    path: 'equipo',
-    loadComponent: () => import('./equipo/equipo.page').then( m => m.EquipoPage)
+    path: 'categorias',
+    loadComponent: () => import('./categorias/categorias.page').then( m => m.CategoriasPage)
   },
 
 ];

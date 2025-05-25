@@ -1,0 +1,32 @@
+<ion-content class="ion-padding">
+  <div class="container">
+    <h1>Suscríbete !</h1>
+
+    <p class="descripcion">
+      Suscríbete ingresando tu correo para que puedas recibir de forma automática todo nuestro catálogo de ofertas semanales
+    </p>
+
+    <div class="formulario">
+      <label for="correo">INGRESAR CORREO</label>
+      <div class="entrada">
+        <input
+          id="correo"
+          type="email"
+          [(ngModel)]="correo"
+          placeholder="tucorreo@example.com"
+        />
+        <button (click)="recibirOfertas()">Recibir ofertas</button>
+      </div>
+    </div>
+
+    <div class="social">
+      <p>Síguenos también en nuestras redes sociales</p>
+      <div class="iconos">
+        <img src="assets/img/instagram.png" alt="Instagram" />
+        <img src="assets/img/facebook.png" alt="Facebook" />
+        <img src="assets/img/twitter.png" alt="Twitter" />
+        <img src="assets/img/gmail.png" alt="Email" />
+      </div>
+    </div>
+  </div>
+</ion-content>
