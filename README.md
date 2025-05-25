@@ -57,7 +57,7 @@ Con una estructura organizativa definida (administradores, vendedores, bodeguero
 
 ### <img src="https://media.giphy.com/media/VgCDAzcKvsR6OM0uWg/giphy.gif" width="50"> La api que utilizamos
 
-![Diagrama](./Assets/Diagramat.png)
+![Diagrama](./Assets/Diagrama.png)
 
 <p><em>Este diagrama muestra la estructura de nuestra API usando Arquitectura limpia. Cada capa tiene una responsabilidad única, lo que ayuda a mejorar el mantenimiento, la escalabilidad y la capacidad de prueba. Las capas internas no conocen a las externas, y todo acceso a recursos (como Transbank o la base de datos) se hace desde los casos de uso a través de adaptadores.
 </em></p>
