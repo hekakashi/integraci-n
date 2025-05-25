@@ -2,7 +2,7 @@
 
 <p><em>FERREMAS es una distribuidora chilena de productos de ferretería y construcción, fundada en los años 80 y con presencia en la Región Metropolitana y otras regiones del país. Ofrece una amplia gama de herramientas, materiales eléctricos, pinturas y equipos de seguridad, trabajando con marcas reconocidas como Bosch, Makita, Stanley y Sika.
 
-Con una estructura organizativa definida (administradores, vendedores, bodegueros y contadores), FERREMAS ha evolucionado hacia un modelo híbrido de ventas físicas y en línea para facilitar el abastecimiento a ferreterías y constructoras. Este proyecto busca digitalizar y optimizar sus operaciones mediante el desarrollo de una API basada en arquitectura limpia.
+Con una estructura organizativa definida (administradores, vendedores, bodegueros y contadores), FERREMAS ha evolucionado hacia un modelo híbrido de ventas físicas y en línea para facilitar el abastecimiento a ferreterías y constructoras. Este proyecto busca digitalizar y optimizar sus operaciones.
 </em></p>
 
 - 🔭 I’m currently working on getting my shit together.
