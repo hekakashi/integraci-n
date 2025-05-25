@@ -25,7 +25,7 @@ Con una estructura organizativa definida (administradores, vendedores, bodeguero
     <img width="60%" align="right" alt="Anmol's GitHub Stats" src="https://github-readme-stats.vercel.app/api?username=anmolpant&show_icons=true&hide_border=true" />
   </a>
   
-  <code><img width="10%" src="https://www.vectorlogo.zone/logos/ionicframework/ionicframework-icon.svg"></code>
+  <code><img width="5%" src="https://www.vectorlogo.zone/logos/ionicframework/ionicframework-icon.svg"></code>
   <code><img width="10%" src="https://www.vectorlogo.zone/logos/python/python-ar21.svg"></code>
   <code><img width="10%" src="https://www.vectorlogo.zone/logos/mysql/mysql-ar21.svg"></code> 
 </p>
