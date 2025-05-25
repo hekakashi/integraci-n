@@ -18,7 +18,7 @@ Con una estructura organizativa definida (administradores, vendedores, bodeguero
 - 📚 5 Words that best sum me up: Music, Movies, Memes, Minimalism, Melancholy.
 
 
-**Languages and Tools:** 
+**Lenguajes y herramientas utilizadas:** 
 
 <p>
   <a href="https://github.com/anmolpant/SaniText">
