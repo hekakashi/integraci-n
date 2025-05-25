@@ -55,17 +55,21 @@ Con una estructura organizativa definida (administradores, vendedores, bodeguero
 </div>
 
 
-### <img src="https://media.giphy.com/media/VgCDAzcKvsR6OM0uWg/giphy.gif" width="50"> La api que utilizamos
+### <img src="https://media.giphy.com/media/VgCDAzcKvsR6OM0uWg/giphy.gif" width="50"> Diagrama de API
 
 ![Diagrama](./Assets/Diagrama.png)
 
 <p><em>Este diagrama muestra la estructura de nuestra API usando Arquitectura limpia. Cada capa tiene una responsabilidad única, lo que ayuda a mejorar el mantenimiento, la escalabilidad y la capacidad de prueba. Las capas internas no conocen a las externas, y todo acceso a recursos (como Transbank o la base de datos) se hace desde los casos de uso a través de adaptadores.
 </em></p>
-<p> Controladores → Reciben peticiones HTTP como los productos, o crear transaccion</p>
-<p> Casos de Uso → Contienen la lógica de negocio (ProductService, iniciarTransbank)</p>
-<p> Entidades → Modelos de datos (Product, Dollar, Transacción)</p>
-<p> Infraestructura → Conexiones externas (Base de datos, Transbank)</p>
-<p>Separa lo que el usuario ve, la lógica del negocio, los datos, y las conexiones externas en capas independientes.</p>
+## 🧱 Arquitectura del Proyecto
+
+<p><strong>Controladores</strong> → Reciben las peticiones HTTP (por ejemplo, obtener productos o crear una transacción).</p>
+<p><strong>Casos de Uso</strong> → Contienen la lógica de negocio (por ejemplo, <code>ProductService</code>, iniciar transacción con Transbank).</p>
+<p><strong>Entidades</strong> → Representan los modelos del dominio (por ejemplo, <code>Product</code>, <code>Dollar</code>, <code>Subscription</code>).</p>
+<p><strong>Infraestructura</strong> → Gestiona las conexiones externas (base de datos, servicios externos como Transbank).</p>
+
+<p>Esta arquitectura separa claramente lo que el usuario ve, la lógica del negocio, los datos y las dependencias externas en capas independientes, facilitando la mantenibilidad y escalabilidad del sistema.</p>
+
 
 
 
