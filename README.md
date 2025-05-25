@@ -59,7 +59,7 @@
 
 <p><em>Este diagrama muestra la estructura de nuestra API usando Arquitectura limpia. Cada capa tiene una responsabilidad única, lo que ayuda a mejorar el mantenimiento, la escalabilidad y la capacidad de prueba. Las capas internas no conocen a las externas, y todo acceso a recursos (como Transbank o la base de datos) se hace desde los casos de uso a través de adaptadores.
 </em></p>
-<p> Controladores → Reciben peticiones HTTP (/products, /crear_transaccion)</p>
+<p> Controladores → Reciben peticiones HTTP como los productos, o crear transaccion</p>
 <p> Casos de Uso → Contienen la lógica de negocio (ProductService, iniciarTransbank)</p>
 <p> Entidades → Modelos de datos (Product, Dollar, Transacción)</p>
 <p> Infraestructura → Conexiones externas (Base de datos, Transbank)</p>
