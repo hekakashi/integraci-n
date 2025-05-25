@@ -59,9 +59,10 @@ Con una estructura organizativa definida (administradores, vendedores, bodeguero
 
 ![Diagrama](./Assets/Diagrama.png)
 
-<p><em>Este diagrama muestra la estructura de nuestra API usando Arquitectura limpia. Cada capa tiene una responsabilidad única, lo que ayuda a mejorar el mantenimiento, la escalabilidad y la capacidad de prueba. Las capas internas no conocen a las externas, y todo acceso a recursos (como Transbank o la base de datos) se hace desde los casos de uso a través de adaptadores.
+<p><em>
+Este diagrama representa la estructura de nuestra API basada en los principios de Arquitectura Limpia. Cada capa tiene una responsabilidad específica, lo que favorece la mantenibilidad, escalabilidad y testeo del sistema. Las capas internas no dependen de las externas, y todo acceso a recursos como Transbank o la base de datos se realiza a través de los casos de uso, mediante adaptadores o servicios.
 </em></p>
-## 🧱 Arquitectura del Proyecto
+
 
 <p><strong>Controladores</strong> → Reciben las peticiones HTTP (por ejemplo, obtener productos o crear una transacción).</p>
 <p><strong>Casos de Uso</strong> → Contienen la lógica de negocio (por ejemplo, <code>ProductService</code>, iniciar transacción con Transbank).</p>
