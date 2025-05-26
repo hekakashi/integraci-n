@@ -20,7 +20,6 @@ Con una estructura organizativa definida (administradores, vendedores, bodeguero
 
 <div align="center">
 
-![VisitorCount](https://profile-counter.glitch.me/{anmolpant}/count.svg)
 
 </div>
 
