@@ -4,7 +4,7 @@
 
 Con una estructura organizativa definida (administradores, vendedores, bodegueros y contadores), FERREMAS ha evolucionado hacia un modelo híbrido de ventas físicas y en línea para facilitar el abastecimiento a ferreterías y constructoras. Este proyecto busca digitalizar y optimizar sus operaciones.
 </em></p>
-<img src="![image](https://github.com/user-attachments/assets/edea703c-b70d-4998-a9b7-32975fc0804a)" width="50"></h2> 
+<img src="![image](https://github.com/user-attachments/assets/edea703c-b70d-4998-a9b7-32975fc0804a)" width="50">
 
 
 **Lenguajes y herramientas utilizadas:** 
