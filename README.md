@@ -5,18 +5,6 @@
 Con una estructura organizativa definida (administradores, vendedores, bodegueros y contadores), FERREMAS ha evolucionado hacia un modelo híbrido de ventas físicas y en línea para facilitar el abastecimiento a ferreterías y constructoras. Este proyecto busca digitalizar y optimizar sus operaciones.
 </em></p>
 
-- 🔭 I’m currently working on getting my shit together.
-- 🔮 What do I do? - Predict the future via computer science black magic.
-- 🌱 I’m currently learning to use reinforcement learning in real life to control mechanical 
-      conveyances for transporting people or goods...basically, I'm learning how to drive. 
-- 👯 I’m looking to collaborate on Machine Learning, Java and Web Development related projects.
-- 🤔 I’m looking for help with LSTMs and Cloud Computing. 
-- 💬 Ask me about: anything but my life.
-- 📫 How to reach me: oohhh toodlesssss. I mean, use the links in the footer.
-- 😄 Pronouns: built/different
-- ⚡ Fun fact: Getting stabbed is very demotivating.
-- 📚 5 Words that best sum me up: Music, Movies, Memes, Minimalism, Melancholy.
-
 
 **Lenguajes y herramientas utilizadas:** 
 
