@@ -1,0 +1,41 @@
+.contenedor-flex {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 10px;
+}
+
+.columna {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.carrito-col {
+  max-width: 50%;
+  overflow-y: auto;
+}
+
+.pago-col {
+  max-width: 50%;
+}
+
+.producto-card {
+  margin-bottom: 15px;
+}
+
+.total-item {
+  margin-top: auto;
+  margin-bottom: 15px;
+}
+
+/* Responsive: en pantallas pequeñas apilar columnas */
+@media (max-width: 768px) {
+  .contenedor-flex {
+    flex-direction: column;
+  }
+
+  .carrito-col, .pago-col {
+    max-width: 100%;
+  }
+}

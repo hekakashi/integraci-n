@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Suscríbete</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="container">
+    <h1>¡Suscríbete!</h1>
+    <p>
+      Suscríbete ingresando tu correo para que puedas recibir de forma automática
+      todo nuestro catálogo de ofertas semanales.
+    </p>
+
+    <div class="input-group">
+      <div class="campo">
+        <ion-label position="stacked">INGRESAR CORREO</ion-label>
+        <ion-input 
+          type="email" 
+          placeholder="Tu correo electrónico" 
+          [(ngModel)]="email" 
+          required
+        ></ion-input>
+      </div>
+      <ion-button expand="block" color="primary" (click)="enviarCorreo()">
+        Recibir ofertas
+      </ion-button>
+    </div>
+
+    <ion-text color="success" *ngIf="mensajeExito">{{ mensajeExito }}</ion-text>
+    <ion-text color="danger" *ngIf="mensajeError">{{ mensajeError }}</ion-text>
+
+    <div class="social">
+      <p>Síguenos también en nuestras redes sociales</p>
+      <ion-item lines="none">
+        <ion-label>
+          <hr class="linea" />
+        </ion-label>
+      </ion-item>
+      <div class="icons">
+        <ion-icon name="logo-instagram"></ion-icon>
+        <ion-icon name="logo-facebook"></ion-icon>
+        <ion-icon name="logo-twitter"></ion-icon>
+        <ion-icon name="mail-outline"></ion-icon>
+      </div>
+    </div>
+  </div>
+</ion-content>

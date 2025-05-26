@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Carrito</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Saludo y aviso de descuento -->
+  <div *ngIf="usuarioNombre; else sinSesion" class="ion-margin-bottom">
+    <p>Hola, <strong>{{ usuarioNombre }}</strong>. ¡Tienes un 10% de descuento aplicado!</p>
+  </div>
+  <ng-template #sinSesion>
+    <p class="ion-margin-bottom">Hola, invitado. <a routerLink="/iniciar">Inicia sesión</a> para obtener descuentos.</p>
+  </ng-template>
+
+  <div class="contenedor-flex">
+    <!-- Columna izquierda: carrito -->
+    <div class="columna carrito-col">
+      <ion-card *ngFor="let producto of carrito" class="producto-card">
+        <ion-card-header>
+          <ion-card-title>{{ producto.name }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Cantidad: {{ producto.cantidad }}</p>
+          <p>Subtotal: {{ (producto.price * producto.cantidad) | number:'1.0-0' }} CLP</p>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-item lines="full" class="total-item">
+        <ion-label><strong>Total</strong></ion-label>
+        <ion-note slot="end">{{ totalCompra | number:'1.0-0' }} CLP</ion-note>
+      </ion-item>
+
+      <ion-item *ngIf="descuentoAplicado" lines="full" class="total-item">
+        <ion-label><strong>Total con descuento (10%)</strong></ion-label>
+        <ion-note slot="end">{{ totalConDescuento | number:'1.0-0' }} CLP</ion-note>
+      </ion-item>
+
+      <ion-button color="danger" expand="block" (click)="vaciarCarrito()">
+        Vaciar Carrito
+      </ion-button>
+    </div>
+
+    <!-- Columna derecha: método de pago y botones -->
+    <div class="columna pago-col">
+      <ion-item lines="full">
+        <ion-label position="stacked">Forma de Pago</ion-label>
+        <ion-select interface="popover" [(ngModel)]="metodoPago">
+          <ion-select-option value="tarjeta">Tarjeta</ion-select-option>
+          <ion-select-option value="transferencia">Transferencia Bancaria</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <div *ngIf="metodoPago === 'transferencia'" class="ion-padding">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Datos de Transferencia</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p><strong>Banco:</strong> Banco Ejemplo</p>
+            <p><strong>Cuenta:</strong> 123456789</p>
+            <p><strong>Nombre:</strong> Nombre Empresa</p>
+            <p><strong>RUT:</strong> 12.345.678-9</p>
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+      <ion-button expand="block" color="primary" (click)="realizarPago()">
+        Pagar
+      </ion-button>
+
+      <ion-button expand="block" fill="clear" routerLink="/iniciar">
+        Iniciar sesión
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
