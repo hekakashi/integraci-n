@@ -1,10 +1,12 @@
 from flask import Blueprint, request, jsonify
 from api.services.user_service import UserService
 from api.services.product_service import ProductService
-from api.services.product_service_by_id import ProductServiceById
+from api.services.product_service_by_type import ProductServiceByType
 from api.services.dollar_service import DollarService
 from api.services.subs_service import SubscriptionService
-from api.services.mercado_pago_service import MercadoPagoService
+from api.services.webpay_service import WebpayService
+from werkzeug.security import check_password_hash
+from flask import redirect
 
 def register_routes(app, mysql):
     api_bp = Blueprint('api', __name__)
@@ -13,24 +15,69 @@ def register_routes(app, mysql):
     services = {
         'user': UserService(mysql),
         'product': ProductService(mysql),
-        'product_by_id': ProductServiceById(mysql),
+        'product_by_type': ProductServiceByType(mysql),
         'dollar': DollarService(),
         'subscription': SubscriptionService(mysql),
-        #'mercado_pago': MercadoPagoService(app.config['MP_ACCESS_TOKEN'])
     }
+    webpay_service = WebpayService()
 
-    # Rutas básicas (GET)
+    @api_bp.route('/suscribirse', methods=['POST'])
+    def suscribirse():
+        data = request.get_json()
+        email = data.get('email')
+        return services['subscription'].add_subscription(email)
+    
+    @api_bp.route('/registrar_usuario', methods=['POST'])
+    def registrar_usuario():
+        data = request.get_json()
+        required_fields = ['nombre', 'usuario', 'correo', 'contrasena']
+        for field in required_fields:
+            if not data.get(field):
+                return jsonify({'error': f'Falta el campo {field}'}), 400
+        
+        return services['user'].add_user(data)
+
+    @api_bp.route('/login', methods=['POST'])
+    def login():
+        data = request.get_json()
+        usuario = data.get('usuario')
+        clave = data.get('clave')
+
+        if not usuario or not clave:
+            return jsonify({'error': 'Faltan usuario o clave'}), 400
+
+        cursor = mysql.connection.cursor()
+        cursor.execute("SELECT id, nombre, usuario, correo, contrasena, telefono FROM users WHERE usuario = %s", (usuario,))
+        user = cursor.fetchone()
+        cursor.close()
+
+        if user and check_password_hash(user[4], clave):
+            return jsonify({'message': 'Login exitoso', 'usuario': user[2], 'nombre': user[1]})
+        else:
+            return jsonify({'error': 'Usuario o contraseña incorrectos'}), 401
+
     @api_bp.route('/users', methods=['GET'])
     def get_users():
-        return jsonify(services['user'].get_all_users())
+        try:
+            users = services['user'].get_all_users()
+            return jsonify(users)
+        except Exception as e:
+            import traceback
+            traceback.print_exc()  # Imprime todo el stack trace
+            return jsonify({'error': 'Error al obtener usuarios', 'detail': str(e)}), 500
+
 
     @api_bp.route('/products', methods=['GET'])
     def get_products():
         return jsonify(services['product'].get_all_products())
 
-    @api_bp.route('/products_by_id', methods=['GET'])
-    def get_products_by_id():
-        return jsonify(services['product_by_id'].get_all_products())
+    @api_bp.route('/products_by_type', methods=['GET'])
+    def get_products_by_type():
+        tipo = request.args.get('type')
+        if not tipo:
+            return jsonify({'error': 'Missing "type" query parameter'}), 400
+        products = services['product_by_type'].get_products_by_type(tipo)
+        return jsonify(products)
 
     @api_bp.route('/subscriptions', methods=['GET'])
     def get_subscriptions():
@@ -39,37 +86,21 @@ def register_routes(app, mysql):
     @api_bp.route('/dolarvalue', methods=['GET'])
     def get_dolar():
         return jsonify(services['dollar'].get_dollar_today())
+    
+    # pagos
+    @app.route("/crear_transaccion", methods=['GET','POST'])
+    def crear_transaccion():
+        data = request.get_json()
+        monto = data.get("monto")
+        if not monto:
+            return jsonify({"error": "Falta monto"}), 400
+        url = webpay_service.iniciar_pago(monto)
+        return jsonify({"url": url})
 
-    # Rutas Mercado Pago
-    @api_bp.route('/mercado_pago/create', methods=['POST'])
-    def create_mp_transaction():
-        try:
-            data = request.get_json()
-
-            # Validación de campos obligatorios
-            required_fields = ['title', 'quantity', 'unit_price']
-            if not all(field in data for field in required_fields):
-                missing = [field for field in required_fields if field not in data]
-                return jsonify({'error': f'Missing required fields: {", ".join(missing)}'}), 400
-
-            if float(data['unit_price']) <= 0:
-                return jsonify({'error': 'unit_price must be greater than 0'}), 400
-
-            result = services['mercado_pago'].create_payment_preference(
-                title=data['title'],
-                quantity=int(data['quantity']),
-                unit_price=float(data['unit_price'])
-            )
-
-            return jsonify({
-                'status': 'success',
-                'data': result
-            }), 200
-
-        except ValueError as e:
-            return jsonify({'error': f'Invalid data format: {str(e)}'}), 400
-        except Exception as e:
-            app.logger.error(f'MercadoPago error: {str(e)}', exc_info=True)
-            return jsonify({'error': 'Transaction processing failed'}), 500
-
+    @app.route("/confirmar_pago", methods=['POST'])
+    def confirmar_pago():
+        token = request.form.get("token_ws")
+        response = webpay_service.confirmar_pago(token)
+        return jsonify({"estado": "Pago exitoso", "detalle": response})
+    
     app.register_blueprint(api_bp)

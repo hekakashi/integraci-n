@@ -3,5 +3,7 @@ Flask-MySQLdb==1.0.1
 Flask-Cors==4.0.0
 marshmallow==3.20.1
 flasgger==0.9.7.1
-transbank==1.4.2
+python-dotenv==1.0.1
+transbank-sdk==1.1.0
+
 #pip install -r requirements.txt

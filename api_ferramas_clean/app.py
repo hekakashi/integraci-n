@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_cors import CORS 
 from api.routes.routes import register_routes
 from api.db.database import init_db
 from dotenv import load_dotenv
@@ -7,35 +8,25 @@ import logging
 from logging.handlers import RotatingFileHandler
 from werkzeug.middleware.proxy_fix import ProxyFix
 
-# Cargar variables de entorno desde .env
-load_dotenv()
-
 def create_app():
     app = Flask(__name__)
-    
-    # Configuración de seguridad para proxies (si la app está detrás de Nginx/Apache)
+
+    CORS(app)
+
     app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1)
     
-    # Configuración básica de la aplicación
     app.config.update(
-        # Configuración MySQL (valores sensibles solo desde variables de entorno)
         MYSQL_HOST='localhost',
         MYSQL_USER='root',
         MYSQL_PASSWORD='Alcl1203.',
         MYSQL_DB='ferramas',
-        
-        # Configuración Webpay (Transbank)
         WEBPAY_COMMERCE_CODE=os.getenv('WEBPAY_COMMERCE_CODE', '597055555532'),
         WEBPAY_API_KEY=os.getenv('WEBPAY_API_KEY', '579B532A7440BB0C9079DED94D31EA1615BACEB56610332264630D42D0A36B1C'),
         WEBPAY_ENVIRONMENT=os.getenv('WEBPAY_ENVIRONMENT', 'test').lower(),
         WEBPAY_RETURN_URL=os.getenv('WEBPAY_RETURN_URL', 'http://localhost:5000/webpay/confirm'),
-        
-        # Configuración de seguridad
         SECRET_KEY=os.getenv('SECRET_KEY', os.urandom(24).hex()),
         SESSION_COOKIE_SECURE=(os.getenv('ENVIRONMENT') == 'production'),
         SESSION_COOKIE_HTTPONLY=True,
-        
-        # Configuración adicional
         ENVIRONMENT=os.getenv('ENVIRONMENT', 'development')
     )
 
@@ -45,7 +36,6 @@ def create_app():
     # Inicializar MySQL (debe retornar la conexión)
     mysql = init_db(app)
     
-    # Registrar rutas pasando la conexión mysql
     register_routes(app, mysql)
     
     return app
@@ -64,7 +54,7 @@ def configure_logging(app):
 
     file_handler = RotatingFileHandler(
         'logs/ferramas.log',
-        maxBytes=1024*100,  # 100 KB
+        maxBytes=1024*100, 
         backupCount=10,
         encoding='utf-8'
     )
@@ -75,7 +65,6 @@ def configure_logging(app):
 
     logging.basicConfig(level=log_level)
 
-    # Limpiar handlers por defecto para evitar logs duplicados
     for handler in app.logger.handlers[:]:
         app.logger.removeHandler(handler)
 

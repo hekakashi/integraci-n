@@ -1,12 +1,18 @@
 class User:
-    def __init__(self, id, name, email):
+    def __init__(self, id, nombre, usuario, correo, contrasena, telefono):
         self.id = id
-        self.name = name
-        self.email = email
+        self.nombre = nombre
+        self.usuario = usuario
+        self.correo = correo
+        self.contrasena = contrasena
+        self.telefono = telefono
 
     def to_dict(self):
         return {
             'id': self.id,
-            'name': self.name,
-            'email': self.email
+            'nombre': self.nombre,
+            'usuario': self.usuario,
+            'correo': self.correo,
+            'telefono': self.telefono
+            # No conviene enviar contrasena
         }
