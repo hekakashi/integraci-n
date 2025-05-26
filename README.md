@@ -43,31 +43,3 @@ Este diagrama representa la estructura de nuestra API basada en los principios d
 
 
 
-```javascript
-const anmol = {
-    pronouns: "Bro" | "Bruh",
-    code: ["Javascript", "HTML", "Python", "Java", "C++"],
-    askMeAbout: ["Web Dev", "Tech", "Machine learning", "Software Development", "TV Shows", "Content Writing", "Memes"],
-    technologies: {
-        frontEnd: {
-            js: ["Vanilla", "jQuery"],
-            css: ["CSS3", "Tailwind", "Bootstrap"]
-        },
-        backEnd: {
-            python: ["flask"]
-            java : ["JSP"]
-        },
-        devOps: ["GCP"], ["Azure"]
-        databases: ["Mongo", "MySql", "sqlite", "phpMyAdmin", "Oracle"],
-        ML: ["Tensorflow", "Keras", "Sklearn", "open-cv", "matplotlib", "pandas", "Octave"]
-    },
-    currentProject: "Working on enhancing my current skillset whilst simultaneously looking for new opportunities.",
-    funFact: "My jokes are a cry for help."
-};
-```
-
-
-
----
-
-
